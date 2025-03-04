@@ -10,6 +10,14 @@ npm install github:USERNAME/i18n-module
 
 ## Usage
 
+translations/en.json
+```json
+{
+    "hello": "Hello World!"
+}
+```
+
+example-usage.js
 ```js
 import I18n from "i18n-module";
 
@@ -18,6 +26,8 @@ i18n.loadLanguage("en").then(() => {
     console.log(i18n.translate("hello"));
 });
 ```
+
+See demo folder for more examples and how to use it.
 
 ## Testing
 

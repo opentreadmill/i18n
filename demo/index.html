@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .css-translation::after {
+                content: var(--translated-content);
+            }
+        </style>
+    </head>
+    <body>
+        <select>
+            <option value="de">de</option>
+            <option value="en" selected>en</option>
+        </select>
+        <p data-i18n="hello"></p>
+        <p class="css-translation" data-i18n-css="hello">--translated-content: </p>
+        <p data-i18n="placeholder-example" data-i18n-params="{&quot;age&quot;:&quot;41&quot;}"></p>
+        
+        <script type="module">
+            import I18n from "../index.js";
+            
+            const i18n = new I18n();
+            i18n.loadLanguage('en');
+
+            document.querySelector('select').addEventListener('change', (event) => {
+                i18n.loadLanguage(event.target.value);
+            });
+        </script>
+    </body>
+</html>
